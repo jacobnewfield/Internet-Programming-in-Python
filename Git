@@ -1,0 +1,56 @@
+Git: a tool for storing, comparing and merging snapshots of your project
+
+- Creating new and/or modifying existing file(s) in your local Git directory, prior to running the add and commit commands, will result in the new and/or modified file(s) changed in the your local Git directory but unstaged and not committed to the remote repository 
+
+init and clone:
+>> git init				(initializes a local directory as a Git repository
+>> git clone				(copy a git repository so you can add to it)
+
+add, status and diff:
+>> git add				(adds file contents to the staging area)
+>> git status 				(view the status of your files in the local working directory and staging area)
+>> git status -s 			(view files modified since last commit only: first column represents files that have been modified (M) and staged (git add) and the second column represents files that have been modified (M) but unstaged, e.g. 'MM file.txt')
+>> git diff				(show diff of what is modified but unstaged)
+>> git diff --cached 			(show diff of staged changes)
+>> git diff HEAD			(show diff of all staged or unstaged changes)
+>> git diff --stat			(show summary of changes instead of a full diff)
+
+commit, reset HEAD and rm:
+>> git commit -m 'commit message'	(records a snapshot to the staging area Commit message is a short summary of changes, usually 50 characters or less)
+>> git commit -a			(automatically stage all tracked, modified files before commit. Note: this command will auto add existing or "tracked" files that have been modified. You will need to run the add command for newly created files in the project. Also, remember to include the message switch, i.e. "git commit -am 'commit message'")
+>> git reset HEAD 			(unstage changes that you have staged)
+>> git reset HEAD -- [file]		(unstage changes that you have staged on a particular file)
+>> git config --global alias.unstage "reset HEAD" (creates an alias, named "unstage" for command "reset HEAD". Now you can run command "git unstage [file]")
+>> git rm				(remove files from the staging area. The difference between 'rm' and 'reset HEAD' is that 'reset HEAD' reverts the staging area to what was there before modifying things while 'rm' removes the file from the stage entirely)
+>> git rm [file]			(remove file from the staging area as well as delete it off your disk/working directory)
+>> git rm --cached			(remove file from the staging area but leave the file in the working directory)
+
+branch, checkout and merge:
+>> git branch 				((general) list, create and manage working contexts)
+>> git branch				((command) list your available branches)
+>> git branch (branchname)		(create a new branch)
+>> git branch -d (branchname)		(delete a branch)
+>> git checkout (branchname)		(switch to given branch context)
+>> git checkout -b (branchname)		(create and immediately switch to craeated branch)
+>> git merge (branchname)		(merge branch context into you current one)
+
+log and tag:
+>> git log (branch)			(show commit history of branch. Current branch if no branch specified)
+>> git log (branch) --oneline		(compact version of 'git log')
+>> git log (branch) --oneline --graph	(show history when branched and merged)
+>> git tag				(tag a point in history as important)
+>> git tag -a [label]			(annotated tag with label and tag message)
+>> git tag -a [label] [a commit]	(tag a commit that is not the current commit)
+>> git log --decorate			(shows tags in log history, among other things)
+
+fetch, push, pull and remote:
+>> git remote				((general) list, add and delete remote repository aliases)
+>> git remote				((command) list your remote aliases)
+>> git remote -v			(list remote aliases followed by their corresponding URL. You could see two URLs for each remote, one for fetch and one for push)
+>> git remote add [alias] [url]		(add a new remote repository of your project)
+>> git remote rm [alias]		(remove an existing remote alias)
+>> git fetch [alias]			(download new branches and data from a remote repository)
+>> git pull [alias]			(fetch from a remote repo and try to merge into the current branch. Basically runs 'git fetch' and then 'git merge')
+>> git fetch --all			(synchronize with all remote repositories)
+>> git push [alias] [branch]		(push a new branch and data to a remote repo)
+
