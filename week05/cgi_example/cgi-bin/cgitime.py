@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!C:\Python26\python.exe
 import time
 import datetime
 

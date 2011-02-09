@@ -13,8 +13,8 @@ else:
     print "Do NOT include a ? or anything after it."
     sys.exit(1)
 
-a = random.randrange(1, 200)
-b = random.randrange(1, 200)
+a = 123; #random.randrange(1, 200)
+b = 321; #random.randrange(1, 200)
 expected_result = a + b
 url = url + "?a=%s&b=%s" % (a,b)
 
