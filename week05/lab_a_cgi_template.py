@@ -28,15 +28,19 @@ The request arrived at %s<br>
 
 
 </body>
-</html>""" % (
-        os.environ['SERVER_ADDR'], # server IP
-        'bbbb', # server port
-        'cccc', # client IP
-        'dddd', # client port
-        'eeee', # client hostname
-        'ffff', # server hostname
-        'gggg', # this script name
-        'hhhh', # time
+</html>""" % (os.environ['LOCAL_ADDR'], # server IP
+        os.environ['SERVER_PORT'], # server port
+        os.environ['SERVER_NAME'], # server hostname
+        os.environ['REMOTE_ADDR'], # client IP
+        ''                       , # client port
+        os.environ['REMOTE_HOST'], # client hostname
+        os.environ['SCRIPT_NAME'], # this script name
+        datetime.datetime.now(), # time
         )
 
 print body,
+"""
+for key in os.environ.keys():
+    print 'Key=%s, Value=%s' % (key, os.environ[key])
+"""
+
