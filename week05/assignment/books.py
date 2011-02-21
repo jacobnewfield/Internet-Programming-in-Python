@@ -30,24 +30,24 @@ html_tail = """\
 </HTML>
 """
 class Books(object):
+    @cherrypy.expose
     def index(self):
         t = 'Books Main Page'
         n = 0
         rstring = ''
         for title in titles:
             n += 1
-            s = '<a href="details?id=id%s">%s</a><br>\n' % (n, title['title'])
+            s = '<a href="/id%s/">%s</a><br>\n' % (n, title['title'])
             rstring += s
         return html_head % t + rstring + html_tail
-    index.exposed = True
 
-    def details(self, id):
+    @cherrypy.expose
+    def default(self, id):
         info = BookDB().title_info(id)
         t = "Details for Book '%s'" % info['title']
         home = '<a href="/">Home</a>'
         rstring = '<br>\n'.join(['%s: %s' % (key, info[key]) for key in info])
         return html_head % t + rstring + '<br>\n' + home + html_tail
-    details.exposed = True
     
 cherrypy.quickstart(Books())
 #application = cherrypy.Application(Books(), script_name=None, config=None) 

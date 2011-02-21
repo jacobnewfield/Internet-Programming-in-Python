@@ -21,17 +21,23 @@ class HelloWorld:
         yield 'hello from link a'
 
     @cherrypy.expose
-    def positional(self, arg):
+    def link_b(self):
+        yield 'hello from link b'
+
+    @cherrypy.expose
+    def positional(self, *args):
         yield 'look, arguments!<br/>'
-        yield arg
+        for arg in args:
+            yield arg + '<br>'
         yield '<br/>'
 
 
     @cherrypy.expose
-    def named(self, a):
+    def named(self, **kwargs):
         yield 'look, keyword arguments!<br/>'
         yield '<table border="1">'
-        yield '<tr><td>%s</td><td>%s</td></tr>' % ('a', a)
+        for key in kwargs:
+            yield '<tr><td>%s</td><td>%s</td></tr>' % (key, kwargs[key])
         yield '</table>'
 cherrypy.quickstart(HelloWorld())
 
