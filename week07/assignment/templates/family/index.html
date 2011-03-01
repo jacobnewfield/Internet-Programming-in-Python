@@ -1,0 +1,26 @@
+{% extends "family/families_template.html" %}
+
+{% block title %}Families{% endblock %}
+
+{% block body_id %}body{% endblock %}
+
+{% block body %}
+
+        {% block content_title %}
+                 <h1>Families</h1>
+        {% endblock %}
+
+        {% block content %}
+		{% if latest_family_list %}
+			<ul>
+        		{% for f in latest_family_list %}
+                		<li><a href="{{ f.id }}/">{{ f.family }}</a>
+        		{% endfor %}
+			</ul>
+		{% else %}
+        		No families are available.
+		{% endif %}	
+        {% endblock %}
+
+{% endblock %}
+

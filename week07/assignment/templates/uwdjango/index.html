@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}UW Django Applications{% endblock %}
+
+{% block body_id %}body{% endblock %}
+
+{% block body %}
+
+        {% block content_title %}
+                <h1><center>UW Django Applications</center></h1>
+        {% endblock %}
+
+        {% block content %}
+                <p><font size="5"><a href="/uwdjango/families">Families</a></font>
+                <p><font size="5"><a href="/uwdjango/polls">Polls</a></font>
+                <p><font size="5"><a href="/uwdjango/admin">Admin</a></font>
+        {% endblock %}
+
+{% endblock %}

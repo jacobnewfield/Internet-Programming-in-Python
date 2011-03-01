@@ -1,0 +1,125 @@
+Django commands:
+>> python manage.py sql family
+>> python manage.py syncdb
+>> python manage.py sqlall family 
+
+Shell Commands:
+>> python manage.py shell
+>> from family.models import Family, Member
+>> f = Family.objects.get(pk=1)
+>> fall = Family.objects.all().order_by('-pub_date')[:5]
+>> import datetime
+>> p.member_set.create(name='', relation=?, father='', mother='', birthdate=datetime.datetime(2000, 1, 1, 0, 0))
+
+DB Commands:
+>> DROP TABLE (family_person_children;, family_person_siblings;, family_person;, family_member;, family_family;) - in sqlite3 shell
+>> .schema
+
+
+Proposed Changes:
+> Admin page:
+	>> Change Title
+	>> Change 'Familys' to 'Families'
+	
+
+
+
+
+My Family:
+	Me:
+		Jacob Newfield
+		Father: Ron Newfield
+		Mother: Stephanie Gombos
+		Born: January 29th, 1975
+		Residence: Auburn, WA
+		Siblings:
+			John Newfield
+			Jason Newfield
+			Jeremy Newfield
+		Children: none
+		Spouse: none
+   	Parents:
+	Father: 
+		Ron Newfield
+		Father: Arthur Newfield
+		Mother: Alice Newfield
+		Born: September 9th, 1942
+		Residence: Bakerfield, CA
+		Siblings:
+			Karen
+			Ruth
+			Larry Newfield
+		Children: 
+			John Newfield
+			Jason Newfield
+			Jeremy Newfield
+			Jacob Newfield
+	Mother: 
+		Stephanie Gombos
+		Father: Michael Gombos
+		Mother: Corlene Gombos
+		Born: September 16th, 1953
+		Residence: Olympia, WA
+		Siblings:
+			Michael Gombos
+			Julia Gombos
+			Patrice Bussell
+			John Gombos
+		Children: 
+			John Newfield
+			Jason Newfield
+			Jeremy Newfield
+		 	Jacob Newfield
+  	Siblings:
+		John Newfield 
+		Born: August 19th, 1971
+		Father: Ron Newfield
+		Mother: Stephanie Gombos
+		Residence: Olympia, WA
+		Siblings: 
+			Jason Newfield
+		 	Jeremy Newfield
+		 	Jacob Newfield
+		Spouse: none
+		Children: non
+		 	
+		Jason Newfield
+		Born January 12, 1972
+		Father: Ron Newfield
+		Mother: Stephanie Gombos
+		Residence: Los Angeles, CA
+		Siblings: 
+			Jason Newfield
+			Jeremy Newfield
+			Jacob Newfield
+		Spouse: none
+		Children: none
+		
+		Jeremy Newfield
+		Born April 29th, 1973
+		Father: Ron Newfield
+		Mother: Stephanie Gombos
+		Residence: Bakersfield, CA
+		Siblings: 
+			John Newfield
+			Jason Newfield
+			Jacob Newfield
+		Spouse: 
+			Vanessa Newfield
+		Children: 
+			Dylan Newfield 
+			Aubrey Newfield
+   	Other:
+   	Fiance: 
+   		Julie Carlson
+   		Born November 18th, 1979
+   		Father: Dean Carlson
+   		Mother: Bea Carlson
+   		Residence: Auburn, WA
+   		Siblings:
+   			John Carlson
+   		Spouse:
+   			None
+   		Children:
+   			None
+   		

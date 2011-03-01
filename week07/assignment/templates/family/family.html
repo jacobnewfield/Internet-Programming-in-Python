@@ -1,0 +1,20 @@
+{% extends "family/families_template.html" %}
+
+{% block title %}{{ family.family }}{% endblock %}
+
+{% block body_id %}body{% endblock %}
+
+{% block body %}
+
+	{% block content_title %}<h1>{{ family.family }}</h1>{% endblock %}
+
+	{% block content %}
+	<ul>
+	{% for m in family.member_set.all %}
+	<li>{{ m.relation }} - <a href="/uwdjango/families/contact/{{ m.contact_id }}"> {{ m.contact }}</a></li>
+	{% endfor %}
+	</ul>
+	{% endblock %}
+
+{% endblock %}
+

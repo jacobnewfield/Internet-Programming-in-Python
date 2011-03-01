@@ -1,0 +1,21 @@
+{% extends "family/contact_base.html" %}
+
+{% block title %}Family Member Contact Info{% endblock %}
+
+{% block body_id %}body{% endblock %}
+
+{% block body %}
+	
+	{% block content_title %}<h1>{{ contact.contact }}</h1>{% endblock %}
+	
+	{% block content %}
+	<ul>
+		<li>Birthdate: {{ contact.info.birthdate }}
+		<li>Phone: {{ contact.info.phone }}
+		<li>Cell: {{ contact.info.cell }}
+		<li>Email: {{ contact.info.email }}
+		<li>Address: {{ contact.info.address }}
+	</ul>
+	{% endblock %}
+
+{% endblock %}
