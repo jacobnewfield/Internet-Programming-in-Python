@@ -1,0 +1,8 @@
+<h1>{{ family.family }}</h1>
+<ul>
+{% for member in family.member_set.all %}
+    <li>{{ member.name }}:<br>&nbsp;&nbsp;&nbsp;
+	Relation: {{ member.relation }}<br>&nbsp;&nbsp;&nbsp;
+	Residence: </li>
+{% endfor %}
+</ul>
