@@ -1,0 +1,50 @@
+> sqlite query:
+SELECT "family_family"."id", "family_family"."family", "family_family"."pub_date" FROM "family_family" ORDER BY "family_family"."pub_date" DESC LIMIT 5
+> mongodb equivalent:
+db.families.find().sort({pub_date: 1}).limit(5)
+
+
+
+
+> sqlite query:
+SELECT "family_family"."id", "family_family"."family", "family_family"."pub_date" FROM "family_family" WHERE "family_family"."id" = 2
+> mongodb equivalent:
+db.families.findOne({_id:2})
+
+
+
+> sqlite query:
+SELECT "family_member"."id", "family_member"."family_id", "family_member"."contact_id", "family_member"."relation" FROM "family_member" WHERE "family_member"."family_id" = 2
+> mongodb equivalent:
+db.members.find({family:"Julie's Family"})
+
+
+
+> sqlite query:
+SELECT "contacts_contact"."id", "contacts_contact"."contact", "contacts_contact"."pub_date" FROM "contacts_contact" WHERE "contacts_contact"."id" = 4
+> mongodb equivalent:
+db.contacts.findOne({_id: 4})
+
+
+
+
+> sqlite query:
+SELECT "contacts_contact"."id", "contacts_contact"."contact", "contacts_contact"."pub_date" FROM "contacts_contact" WHERE "contacts_contact"."id" = 5
+> mongodb equivalent:
+db.contacts.findOne({_id: 5})
+
+
+
+
+> sqlite query:
+SELECT "contacts_contact"."id", "contacts_contact"."contact", "contacts_contact"."pub_date" FROM "contacts_contact" WHERE "contacts_contact"."id" = 6
+> mongodb equivalent:
+db.contacts.findOne({_id: 6})
+
+
+
+
+> sqlite query:
+SELECT "contacts_info"."id", "contacts_info"."contact_id", "contacts_info"."birthdate", "contacts_info"."phone", "contacts_info"."cell", "contacts_info"."email", "contacts_info"."address" FROM "contacts_info" WHERE "contacts_info"."contact_id" = 4
+> mongodb equivalent:
+db.contacts.findOne({name: "Dean Carlson"})
