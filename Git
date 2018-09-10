@@ -46,8 +46,9 @@ log and tag:
 fetch, push, pull and remote:
 >> git remote				((general) list, add and delete remote repository aliases)
 >> git remote				((command) list your remote aliases)
->> git remote -v			(list remote aliases followed by their corresponding URL. You could see two URLs for each remote, one for fetch and one for push)
+>> git remote -v		(list remote aliases followed by their corresponding URL. You could see two URLs for each remote, one for fetch and one for push)
 >> git remote add [alias] [url]		(add a new remote repository of your project)
+>> git remote set-url origin [url_of_repository]  (if you cloned someone's repository and you want to commit changes to the forked repository on your github)
 >> git remote rm [alias]		(remove an existing remote alias)
 >> git fetch [alias]			(download new branches and data from a remote repository)
 >> git pull [alias]			(fetch from a remote repo and try to merge into the current branch. Basically runs 'git fetch' and then 'git merge')
